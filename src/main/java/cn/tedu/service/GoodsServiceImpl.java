@@ -14,11 +14,6 @@ public class GoodsServiceImpl implements GoodsService{
 
     @Autowired
     private  GoodsDao goodsDao;
-
-    public GoodsServiceImpl(GoodsDao goodsDao) {
-        this.goodsDao = goodsDao;
-    }
-
     /*根据id删除数据
      * */
     @Override
