@@ -11,11 +11,14 @@ import java.util.Map;
 
 @Service
 public class GoodsServiceImpl implements GoodsService{
-    private final GoodsDao goodsDao;
+
     @Autowired
+    private  GoodsDao goodsDao;
+
     public GoodsServiceImpl(GoodsDao goodsDao) {
         this.goodsDao = goodsDao;
     }
+
     /*根据id删除数据
      * */
     @Override
@@ -33,6 +36,12 @@ public class GoodsServiceImpl implements GoodsService{
         cache.put("goodsKey",list);
         long end = System.currentTimeMillis();
         System.out.println("query time="+(end-start));
+        return list;
+    }
+
+    @Override
+    public List<Goods> findObjects() {
+        List<Goods> list = goodsDao.findObjects();
         return list;
     }
 }

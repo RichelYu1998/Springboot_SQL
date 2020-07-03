@@ -11,4 +11,8 @@ public interface GoodsService {
     /*查询所有数据
     * */
     List<Goods> findGoods();
+    /*查询数据
+     * */
+    List<Goods> findObjects();
+
 }
