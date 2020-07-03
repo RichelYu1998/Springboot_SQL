@@ -17,10 +17,15 @@
         </thead>
         <tbody>
             <tr th:each="g:${list}">
+                <!-- 查询数据 -->
                 <td th:text="${g.id}"></td>
                 <td th:text="${g.name}"></td>
                 <td th:text="${g.remark}"></td>
-                <td th:text="${g.createdTime}"></td>
+                <!--<td th:text="${g.createdTime}"></td>-->
+                <!-- 自定义日期格式 yyyy/MM/dd HH:mm -->
+                <td th:text="${#dates.format(g.createdTime,'yyyy/MM/dd HH:mm')}"></td>
+                <!-- 删除 -->
+                <td><a th:href="@{/goods/doDeleteById(id=${g.id})}">delete</a></td>
             </tr>
         </tbody>
     </table>
