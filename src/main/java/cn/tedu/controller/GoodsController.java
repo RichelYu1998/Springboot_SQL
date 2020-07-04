@@ -39,7 +39,7 @@ public class GoodsController {//web处理层
     /*
     * 添加数据
     * */
-    @RequestMapping("doSaveObject")
+    @RequestMapping("doSaveGoods")
     public String doSaveObject(Goods entity){
         goodsService.saveGoods(entity);
         return "redirect:doGoodsUI";

@@ -20,5 +20,5 @@ public interface GoodsDao {
     List<Goods> findObjects();
     /*添加数据*/
     @Insert("insert into tb_goods(name,remark,createdTime) values (#{name},#{remark},now())")
-    int insertGoods(Goods entity);
+    int insertGoods(Goods entity);//将sql映射也可以写到xml中
 }
