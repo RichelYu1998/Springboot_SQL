@@ -5,6 +5,7 @@ import cn.tedu.pojo.Goods;
 import java.util.List;
 
 public interface GoodsService {
+    int saveGoods(Goods entity);
     /*根据id删除数据
     * */
     int deleteById(Integer id);

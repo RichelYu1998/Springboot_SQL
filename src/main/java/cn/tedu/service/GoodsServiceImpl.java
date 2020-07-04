@@ -12,8 +12,18 @@ import java.util.Map;
 @Service
 public class GoodsServiceImpl implements GoodsService{
 
+
     @Autowired
     private  GoodsDao goodsDao;
+    /*
+    * 添加数据
+    * */
+    @Override
+    public int saveGoods(Goods entity) {
+        int rows = goodsDao.insertGoods(entity);
+        return rows;
+    }
+
     /*根据id删除数据
      * */
     @Override

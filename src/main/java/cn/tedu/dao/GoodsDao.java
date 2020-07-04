@@ -1,10 +1,7 @@
 package cn.tedu.dao;
 
 import cn.tedu.pojo.Goods;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -21,4 +18,7 @@ public interface GoodsDao {
      */
     @Select("select id,name,remark,createdTime from tb_goods")
     List<Goods> findObjects();
+    /*添加数据*/
+    @Insert("insert into tb_goods(name,remark,createdTime) values (#{name},#{remark},now())")
+    int insertGoods(Goods entity);
 }

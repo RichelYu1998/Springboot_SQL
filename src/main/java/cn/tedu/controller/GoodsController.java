@@ -36,4 +36,12 @@ public class GoodsController {//web处理层
         goodsService.deleteById(id);
         return "redirect:doGoodsUI";
     }
+    /*
+    * 添加数据
+    * */
+    @RequestMapping("doSaveObject")
+    public String doSaveObject(Goods entity){
+        goodsService.saveGoods(entity);
+        return "redirect:doGoodsUI";
+    }
 }
